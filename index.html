@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--- thank you ember dummy app --> 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Dummy</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script>
+
+    var now = new Date();
+//sudo date -s "17 JUL 2014 18:00:00" 
+    var cmd =  'sudo date +%Y%m%d%H%M%S -s '
+    var datestring = 
+                      ''+ 
+                     (now.getYear() + 1900) +
+                     ((now.getMonth()+1) < 10 ? '0' + now.getMonth() : now.getMonth()) +
+                     (now.getDate() < 10 ? '0' + now.getDate() : now.getDate()) +
+                     (now.getHours() < 10 ? '0' + now.getHours() : now.getHours()) +
+                     (now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes()) +
+                     (now.getSeconds() < 10 ? '0' + now.getSeconds() : now.getSeconds()) ;
+
+    document.getElementById("pretag").innerHTML = cmd +datestring;
+    </script>
+
+    <body>
+    <pre id="pretag">
+    </pre>
+  </body>
+  </html>
